@@ -1,9 +1,10 @@
 // src/App.js
-import React, { useState } from 'react';
-import FormComponent from './components/FormComponent';
-import PredictionComponent from './components/PredictionComponent';
-import './App.css';
-import logo from './assets/logo.png'; // Import the logo image
+import React, { useState } from "react";
+import FormComponent from "./components/FormComponent";
+import PredictionComponent from "./components/PredictionComponent";
+import "./App.css";
+import logo from "./assets/logo.png"; // Import the logo image
+import PhishingURLDetectorComponent from "./components/PhishingURLDetectorComponent";
 
 function App() {
   const [result, setResult] = useState(null);
@@ -18,7 +19,9 @@ function App() {
     // Simulated response from an API call
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({ is_fraud: Math.random() > 0.5 });
+        resolve({
+          is_fraud: Math.random() > 0.5,
+        });
       }, 1000);
     });
   };
@@ -27,10 +30,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} alt="Logo" className="App-logo" />
-        <h1>Payment Risk Shield </h1>
-      </header>
-      <FormComponent onSubmit={handleFormSubmit} />
-      {result !== null && <PredictionComponent result={result} />}
+        <h1> Payment Risk Shield </h1>{" "}
+      </header>{" "}
+      <FormComponent onSubmit={handleFormSubmit} />{" "}
+      {result !== null && <PredictionComponent result={result} />}{" "}
+      <PhishingURLDetectorComponent />
     </div>
   );
 }
