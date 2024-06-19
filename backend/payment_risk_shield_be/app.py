@@ -2,8 +2,10 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from joblib import load
 from feature_extraction import FeatureExtractor
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) 
 
 @app.route('/')
 def home():
@@ -27,10 +29,10 @@ def feature_prediction():
     features = extractor.extractFeatures()
     
     # Make predictions using the loaded model
-    
+    prediction = xgb_model.predict(pd.DataFrame([features], columns=feature_names))
     
     # Prepare the prediction result
-    result = {}
+    result = {'url': url, 'prediction': int(prediction[0])}
     
     # Add individual features to the result
     for i, feature_name in enumerate(feature_names):
