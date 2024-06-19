@@ -27,11 +27,11 @@ Provide customizable risk assessment and decision-making capabilities
 Ensure scalability and security for high-volume payment processing
 
 # Contributors
-[BeheraSas](https://github.com/BeheraSas/)
-[deonlobo](https://github.com/deonlobo/)
-[RiyaSinghPatel](https://github.com/RiyaSinghPatel)
-[GaganSingh5](https://github.com/GaganSingh5)
-[mugdha2509](https://github.com/mugdha2509)
+[BeheraSas](https://github.com/BeheraSas/),
+[deonlobo](https://github.com/deonlobo/),
+[RiyaSinghPatel](https://github.com/RiyaSinghPatel),
+[GaganSingh5](https://github.com/GaganSingh5),
+[mugdha2509](https://github.com/mugdha2509),
 [dekshitha](https://github.com/dekshitha)
 
 To run the flask application <br>
