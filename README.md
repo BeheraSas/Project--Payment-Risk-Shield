@@ -1,4 +1,6 @@
 # Project--Payment-Risk-Shield
+<img width="683" alt="image" src="https://github.com/BeheraSas/Project--Payment-Risk-Shield/assets/148372851/2bf159b5-81e7-437b-9cff-b04830431ea1">
+
 
 # Payment Risk Shield
 
@@ -26,7 +28,11 @@ Ensure scalability and security for high-volume payment processing
 
 # Contributors
 [BeheraSas](https://github.com/BeheraSas/)
-https://github.com/deonlobo
+[deonlobo](https://github.com/deonlobo/)
+[RiyaSinghPatel](https://github.com/RiyaSinghPatel)
+[GaganSingh5](https://github.com/GaganSingh5)
+[mugdha2509](https://github.com/mugdha2509)
+[dekshitha](https://github.com/dekshitha)
 
 To run the flask application <br>
 1. pip install -r requirements.txt <br>
