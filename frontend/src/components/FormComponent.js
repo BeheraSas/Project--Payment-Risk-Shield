@@ -1,18 +1,14 @@
-// src/components/FormComponent.js
-import React, { useState } from "react";
-import visaLogo from "../assets/card-logos/visa.png";
-import mastercardLogo from "../assets/card-logos/mastercard.jpg";
-import amexLogo from "../assets/card-logos/amex.png";
-import discoverLogo from "../assets/card-logos/discover.jpg";
-// Import other card logos as needed
-import { Button, Flex, Input, Typography } from "antd";
+import React, { useState } from 'react';
+import visaLogo from '../assets/card-logos/visa.png';
+import mastercardLogo from '../assets/card-logos/mastercard.jpg';
+import amexLogo from '../assets/card-logos/amex.png';
+import discoverLogo from '../assets/card-logos/discover.jpg';
 
 const cardTypeLogos = {
   visa: visaLogo,
   mastercard: mastercardLogo,
   amex: amexLogo,
   discover: discoverLogo,
-  // Add other card types here
 };
 
 const getCardType = (number) => {
@@ -21,7 +17,6 @@ const getCardType = (number) => {
     mastercard: /^5[1-5]/,
     amex: /^3[47]/,
     discover: /^6(?:011|5)/,
-    // Add other card type regexes here
   };
 
   for (let [card, regex] of Object.entries(regexes)) {
@@ -34,52 +29,138 @@ const getCardType = (number) => {
 };
 
 const fieldLabels = {
-  trans_date_trans_time: "Transaction date and time",
-  cc_num: "Card Number",
-  merchant: "Merchant",
-  category: "Category",
-  amt: "Amount",
-  first: "First Name",
-  last: "Last Name",
-  gender: "Gender",
-  street: "Street",
-  city: "City",
-  state: "State",
-  zip: "Zip Code",
-  lat: "Latitude",
-  long: "Longitude",
-  city_pop: "City Population",
-  job: "Job",
-  dob: "Date of Birth",
-  trans_num: "Transaction Number",
-  unix_time: "Unix Time",
-  merch_lat: "Merchant Latitude",
-  merch_long: "Merchant Longitude",
+  trans_date_trans_time: 'Transaction date and time',
+  cc_num: 'Card Number',
+  merchant: 'Merchant',
+  category: 'Category',
+  amt: 'Amount',
+  first: 'First Name',
+  last: 'Last Name',
+  gender: 'Gender',
+  street: 'Street',
+  city: 'City',
+  state: 'State',
+  zip: 'Zip Code',
+  lat: 'Latitude',
+  long: 'Longitude',
+  city_pop: 'City Population',
+  job: 'Job',
+  dob: 'Date of Birth',
+  trans_num: 'Transaction Number',
+  unix_time: 'Unix Time',
+  merch_lat: 'Merchant Latitude',
+  merch_long: 'Merchant Longitude',
 };
+
+const sampleMerchants = [
+  {
+    name: 'fraud_Parisian, Schiller and Altenwerth',
+    category: 'misc_net',
+    merch_lat: 29.806815,
+    merch_long: -95.377033
+  },
+  {
+    name: 'fraud_Hagenes, Kohler and Hoppe',
+    category: 'food_dining',
+    merch_lat: 46.835966,
+    merch_long: -89.251001
+  },
+  {
+    name: 'fraud_Kilback LLC',
+    category: 'food_dining',
+    merch_lat: 41.938008,
+    merch_long: -101.775582
+  },
+  {
+    name: 'fraud_Streich, Dietrich and Barton',
+    category: 'shopping_net',
+    merch_lat: 37.324006,
+    merch_long: -80.905928
+  },
+];
+
+const sampleUsers = [
+  {
+    first: 'Cody',
+    last: 'Blake',
+    gender: 'M',
+    street: '300 Hodge Loaf',
+    city: 'Houston',
+    state: 'TX',
+    zip: '77027',
+    lat: 29.7396,
+    long: -95.446,
+    city_pop: 2906700,
+    job: 'Community development worker',
+    dob: '1962-03-14'
+  },
+  {
+    first: 'Micheal',
+    last: 'Walters',
+    gender: 'M',
+    street: '15315 Vaughn Park Suite 356',
+    city: 'Hovland',
+    state: 'MN',
+    zip: '55606',
+    lat: 47.8342,
+    long: -90.0476,
+    city_pop: 272,
+    job: 'Freight forwarder',
+    dob: '2001-07-05'
+  },
+  {
+    first: 'Rachel',
+    last: 'Lowe',
+    gender: 'F',
+    street: '372 Jeffrey Course',
+    city: 'Sutherland',
+    state: 'NE',
+    zip: '69165',
+    lat: 41.1558,
+    long: -101.136,
+    city_pop: 1789,
+    job: 'Insurance broker',
+    dob: '1982-11-02'
+  },
+  {
+    first: 'Dakota',
+    last: 'Fowler',
+    gender: 'M',
+    street: '16220 Joseph Point Suite 096',
+    city: 'Mountain City',
+    state: 'TN',
+    zip: '37683',
+    lat: 36.4657,
+    long: -81.814,
+    city_pop: 13021,
+    job: 'Tree surgeon',
+    dob: '2001-07-05'
+  }
+];
 
 const FormComponent = ({ onSubmit }) => {
   const initialFormState = {
-    trans_date_trans_time: "",
-    cc_num: "",
-    merchant: "",
-    category: "",
-    amt: "",
-    first: "",
-    last: "",
-    gender: "",
-    street: "",
-    city: "",
-    state: "",
-    zip: "",
-    lat: "",
-    long: "",
-    city_pop: "",
-    job: "",
-    dob: "",
-    trans_num: "",
-    unix_time: "",
-    merch_lat: "",
-    merch_long: "",
+    trans_date_trans_time: '',
+    cc_num: '',
+    merchant: '',
+    category: '',
+    amt: '',
+    first: '',
+    last: '',
+    gender: '',
+    street: '',
+    city: '',
+    state: '',
+    zip: '',
+    lat: '',
+    long: '',
+    city_pop: '',
+    job: '',
+    dob: '',
+    trans_num: '',
+    unix_time: '',
+    merch_lat: '',
+    merch_long: ''
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -89,13 +170,43 @@ const FormComponent = ({ onSubmit }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value
     });
 
-    if (name === "cc_num") {
+    if (name === 'cc_num') {
       const detectedCardType = getCardType(value);
       setCardType(detectedCardType);
     }
+  };
+
+  const handleMerchantChange = (e) => {
+    const selectedMerchant = sampleMerchants.find(merchant => merchant.name === e.target.value);
+    setFormData({
+      ...formData,
+      merchant: selectedMerchant.name,
+      category: selectedMerchant.category,
+      merch_lat: selectedMerchant.merch_lat,
+      merch_long: selectedMerchant.merch_long
+    });
+  };
+
+  const handleUserChange = (e) => {
+    const selectedUser = sampleUsers.find(user => user.first === e.target.value.split(' ')[0] && user.last === e.target.value.split(' ')[1]);
+    setFormData({
+      ...formData,
+      first: selectedUser.first,
+      last: selectedUser.last,
+      gender: selectedUser.gender,
+      street: selectedUser.street,
+      city: selectedUser.city,
+      state: selectedUser.state,
+      zip: selectedUser.zip,
+      lat: selectedUser.lat,
+      long: selectedUser.long,
+      city_pop: selectedUser.city_pop,
+      job: selectedUser.job,
+      dob: selectedUser.dob
+    });
   };
 
   const handleSubmit = (e) => {
@@ -104,40 +215,48 @@ const FormComponent = ({ onSubmit }) => {
   };
 
   return (
-    <div className="container p-2 bg-slate-50 m-4 w-1/2 rounded-xl">
-      <form onSubmit={handleSubmit}>
-        <Flex className="flex-col" justify="center" align="center" gap={10}>
-          <Typography.Title level={3}>Fraud Detection</Typography.Title>
-          {Object.keys(initialFormState).map((field) => (
-            <div key={field} className="w-1/2">
-              <label>
-                {/* {fieldLabels[field] || field.replace(/_/g, " ")}:
-            {field === "cc_num" && cardType && (
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label>Merchant:</label>
+        <select onChange={handleMerchantChange}>
+          <option value="">Select Merchant</option>
+          {sampleMerchants.map((merchant) => (
+            <option key={merchant.name} value={merchant.name}>{merchant.name}</option>
+          ))}
+        </select>
+      </div>
+      <div className="form-group">
+        <label>User:</label>
+        <select onChange={handleUserChange}>
+          <option value="">Select User</option>
+          {sampleUsers.map((user) => (
+            <option key={user.first + ' ' + user.last} value={user.first + ' ' + user.last}>{user.first + ' ' + user.last}</option>
+          ))}
+        </select>
+      </div>
+      {Object.keys(initialFormState).map((field) => (
+        <div key={field} className="form-group">
+          <label>
+            {fieldLabels[field] || field.replace(/_/g, ' ')}:
+            {field === 'cc_num' && cardType && (
               <img
                 src={cardTypeLogos[cardType]}
                 alt={`${cardType} logo`}
                 className="card-logo"
               />
-            )} */}
-                <Typography.Title level={3}>
-                  {fieldLabels[field] || field.replace(/_/g, " ")}
-                </Typography.Title>
-                <Input
-                className="w-full"
-                  type="text"
-                  name={field}
-                  placeholder={field}
-                  value={formData[field]}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-          ))}
-          <Button type="primary">Submit</Button>
-        </Flex>
-      </form>
-    </div>
+            )}
+            <input
+              type="text"
+              name={field}
+              value={formData[field]}
+              onChange={handleChange}
+              required
+            />
+          </label>
+        </div>
+      ))}
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
