@@ -1,0 +1,18 @@
+{
+  "name": "project--payment-risk-shield",
+  "version": "1.0.0",
+  "description": "<img width=\"683\" alt=\"image\" src=\"https://github.com/BeheraSas/Project--Payment-Risk-Shield/assets/148372851/2bf159b5-81e7-437b-9cff-b04830431ea1\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd frontend && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^5.18.3",
+    "axios": "^1.7.2",
+    "react-router-dom": "^6.24.0"
+  }
+}
