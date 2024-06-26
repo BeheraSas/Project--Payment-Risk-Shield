@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import FormComponent from './components/FormComponent';
 import PredictionComponent from './components/PredictionComponent';
+import PhishingURLDetector from './components/PhishingURLDetector.component'; 
 import './App.css';
-import logo from './assets/logo.png'; // Correct import path
+import logo from './assets/logo.png';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<FraudDetectionPage />} />
-            <Route path="/phishing-detection" element={<PlaceholderComponent />} />
+            <Route path="/phishing-detection" element={<PhishingURLDetector />} />
           </Routes>
         </div>
       </div>
@@ -55,12 +56,5 @@ const FraudDetectionPage = () => {
     </div>
   );
 };
-
-const PlaceholderComponent = () => (
-  <div>
-    <h2>Phishing Detection Page Coming Soon!</h2>
-    <p>This feature is under development.</p>
-  </div>
-);
 
 export default App;
