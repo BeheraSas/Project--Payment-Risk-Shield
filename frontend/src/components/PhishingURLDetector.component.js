@@ -79,9 +79,9 @@ function PhishingURLDetector() {
       {isPhishing !== null && (
         <>
           <Typography.Title className="mt-4" level={5}>
-            Is Phishing Link?
+            Status 
           </Typography.Title>
-          <Tag color={isPhishing ? "#cd201f" : "#87d068"}>{isPhishing ? "TRUE" : "FALSE"}</Tag>
+          <Tag color={isPhishing ? "#87d068" : "#cd201f"}>{isPhishing ? "FALSE" : "TRUE"}</Tag>
         </>
       )}
       <Typography.Title className="mt-5" level={3}>
