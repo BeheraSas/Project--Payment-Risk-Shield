@@ -26,6 +26,13 @@ Improve payment processing speed and reliability
 Provide customizable risk assessment and decision-making capabilities
 Ensure scalability and security for high-volume payment processing
 
+# Project Sprint Planning
+
+For our integrated Fraud Detection and Phishing URL Verification project, our sprint planning sessions are focused on ensuring clear objectives, well-defined user stories, and achievable tasks. Using **Asana for task management**, each sprint is designed to incrementally build and enhance the project's functionalities, addressing both backend model development and frontend user interface improvements. By prioritizing tasks based on their impact and complexity, we ensure steady progress and alignment with our overall project goals. Collaboration between data scientists, UI developers, and business stakeholders is key, ensuring that each sprint delivers tangible value and keeps us on track to meet our project deadlines.
+
+<img width="1247" alt="Screenshot 2024-07-02 at 5 20 04 PM" src="https://github.com/BeheraSas/Project--Payment-Risk-Shield/assets/148372851/2e13af70-04c4-4d24-9306-056bde52cf35">
+
+
 # Contributors
 [BeheraSas](https://github.com/BeheraSas/),
 [deonlobo](https://github.com/deonlobo/),
