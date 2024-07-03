@@ -1,6 +1,6 @@
 # Project--Payment-Risk-Shield
-<img width="683" alt="image" src="https://github.com/BeheraSas/Project--Payment-Risk-Shield/assets/148372851/2bf159b5-81e7-437b-9cff-b04830431ea1">
 
+![steal-data-concept-with-thieves-computer_23-2148526853](https://github.com/BeheraSas/Project--Payment-Risk-Shield/assets/148372851/9dea3136-efbf-4eaf-815d-d670e2aa0d89)
 
 # Payment Risk Shield
 
