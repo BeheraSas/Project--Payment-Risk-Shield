@@ -81,7 +81,7 @@ function PhishingURLDetector() {
           <Typography.Title className="mt-4" level={5}>
             Status 
           </Typography.Title>
-          <Tag color={isPhishing ? "#87d068" : "#cd201f"}>{isPhishing ? "FALSE" : "TRUE"}</Tag>
+          <Tag color={isPhishing ? "#87d068" : "#cd201f"}>{isPhishing ? "Not Phising" : "Phishing" }</Tag>
         </>
       )}
       <Typography.Title className="mt-5" level={3}>
