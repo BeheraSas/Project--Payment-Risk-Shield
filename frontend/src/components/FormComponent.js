@@ -238,32 +238,66 @@ const FormComponent = () => {
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  
 
+  // const handleSubmit = async (e) => {
+  //   // Clear previous transaction status
+  // setTransactionStatus('');
+  //   e.preventDefault();
+  
   //   // Get selected merchant details
   //   const selectedMerchant = sampleMerchants.find(
   //     (merchant) => merchant.name === formData.merchant
   //   );
+  
+  //   // Check conditions based on merchant and category
+  // if (
+  //   formData.category === 'misc_net' &&
+  //   parseFloat(formData.amt) >= 1000
+  // ) {
+  //   setTransactionStatus('fraud');
+  // } else if (
+  //   formData.category === 'food_dining' &&
+  //   parseFloat(formData.amt) >= 3000
+  // ) {
+  //   setTransactionStatus('fraud');
+  // } else {
+  //   setTransactionStatus('notFraud');
+  // }
+  
+  //   // Create transaction data object
+  //   const transactionData = {
+  //     trans_date_trans_time: formData.trans_date_trans_time,
+  //     amt: formData.amt,
+  //     merchant: formData.merchant,
+  //     transactionStatus,
+  //   };
+  
+  //   // Make API call to save transaction data
+  //   try {
+  //     const response = await fetch('http://localhost:5001/saveTransaction', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(transactionData),
+  //     });
+  //     if (response.ok) {
+  //       // console.log('Transaction saved successfully');
+  //       alert(`Transaction saved successfully. Transaction status: ${transactionStatus}`);
 
-  //   // Check if selected merchant is Parisian, Schiller and Altenwerth
-  //   if (selectedMerchant.name === 'Parisian, Schiller and Altenwerth') {
-  //     // Parse amount as float
-  //     const amount = parseFloat(formData.amt);
-
-  //     // Check amount conditions
-  //     if (amount >= 1000) {
-  //       setTransactionStatus('fraud');
   //     } else {
-  //       setTransactionStatus('notFraud');
+  //       console.error('Failed to save transaction');
   //     }
-  //   } else {
-  //     setTransactionStatus('notFraud');
+  //   } catch (error) {
+  //     console.error('Error:', error);
   //   }
   // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Clear previous transaction status
+    setTransactionStatus('');
   
     // Get selected merchant details
     const selectedMerchant = sampleMerchants.find(
@@ -271,26 +305,29 @@ const FormComponent = () => {
     );
   
     // Check conditions based on merchant and category
-  if (
-    formData.category === 'misc_net' &&
-    parseFloat(formData.amt) >= 1000
-  ) {
-    setTransactionStatus('fraud');
-  } else if (
-    formData.category === 'food_dining' &&
-    parseFloat(formData.amt) >= 3000
-  ) {
-    setTransactionStatus('fraud');
-  } else {
-    setTransactionStatus('notFraud');
-  }
+    let newTransactionStatus = 'notFraud'; // Default to not fraud
+  
+    if (
+      formData.category === 'misc_net' &&
+      parseFloat(formData.amt) >= 1000
+    ) {
+      newTransactionStatus = 'fraud';
+    } else if (
+      formData.category === 'food_dining' &&
+      parseFloat(formData.amt) >= 3000
+    ) {
+      newTransactionStatus = 'fraud';
+    }
+  
+    // Update transaction status
+    setTransactionStatus(newTransactionStatus);
   
     // Create transaction data object
     const transactionData = {
       trans_date_trans_time: formData.trans_date_trans_time,
       amt: formData.amt,
       merchant: formData.merchant,
-      transactionStatus,
+      transactionStatus: newTransactionStatus,
     };
   
     // Make API call to save transaction data
@@ -302,13 +339,16 @@ const FormComponent = () => {
         },
         body: JSON.stringify(transactionData),
       });
+  
       if (response.ok) {
-        console.log('Transaction saved successfully');
+        alert(`Transaction saved successfully. Transaction status: ${newTransactionStatus}`);
       } else {
         console.error('Failed to save transaction');
+        alert('Failed to save transaction');
       }
     } catch (error) {
       console.error('Error:', error);
+      alert('Error occurred while saving transaction');
     }
   };
   
@@ -316,6 +356,9 @@ const FormComponent = () => {
 
   return (
     <div>
+      <h2 style={{ textAlign: 'center', fontSize: '30px' }}>Payment</h2>
+
+      <br></br><br></br>
       <form onSubmit={handleSubmit}>
         {cardType && (
           <div>

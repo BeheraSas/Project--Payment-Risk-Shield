@@ -32,7 +32,6 @@ function App() {
               <Route path="/customer-home/*" element={<CustomersHome />} />
               <Route path="/banking-home" element={<BankingHome />} />
               <Route path="/merchant-home/*" element={<MerchantHome />} />
-              <Route path="*" element={<Navigate to="/customer-home" />} />
 
             </>
           )}
