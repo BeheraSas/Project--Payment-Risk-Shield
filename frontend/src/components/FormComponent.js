@@ -1,3 +1,4 @@
+// src/components/FormComponent.js
 import React, { useState } from 'react';
 import visaLogo from '../assets/card-logos/visa.png';
 import mastercardLogo from '../assets/card-logos/mastercard.jpg';
@@ -57,25 +58,25 @@ const sampleMerchants = [
     name: 'fraud_Parisian, Schiller and Altenwerth',
     category: 'misc_net',
     merch_lat: 29.806815,
-    merch_long: -95.377033
+    merch_long: -95.377033,
   },
   {
     name: 'fraud_Hagenes, Kohler and Hoppe',
     category: 'food_dining',
     merch_lat: 46.835966,
-    merch_long: -89.251001
+    merch_long: -89.251001,
   },
   {
     name: 'fraud_Kilback LLC',
     category: 'food_dining',
     merch_lat: 41.938008,
-    merch_long: -101.775582
+    merch_long: -101.775582,
   },
   {
     name: 'fraud_Streich, Dietrich and Barton',
     category: 'shopping_net',
     merch_lat: 37.324006,
-    merch_long: -80.905928
+    merch_long: -80.905928,
   },
 ];
 
@@ -92,7 +93,7 @@ const sampleUsers = [
     long: -95.446,
     city_pop: 2906700,
     job: 'Community development worker',
-    dob: '1962-03-14'
+    dob: '1962-03-14',
   },
   {
     first: 'Micheal',
@@ -106,7 +107,7 @@ const sampleUsers = [
     long: -90.0476,
     city_pop: 272,
     job: 'Freight forwarder',
-    dob: '2001-07-05'
+    dob: '2001-07-05',
   },
   {
     first: 'Rachel',
@@ -120,7 +121,7 @@ const sampleUsers = [
     long: -101.136,
     city_pop: 1789,
     job: 'Insurance broker',
-    dob: '1982-11-02'
+    dob: '1982-11-02',
   },
   {
     first: 'Dakota',
@@ -134,8 +135,8 @@ const sampleUsers = [
     long: -81.814,
     city_pop: 13021,
     job: 'Tree surgeon',
-    dob: '2001-07-05'
-  }
+    dob: '2001-07-05',
+  },
 ];
 
 const FormComponent = ({ onSubmit }) => {
@@ -160,7 +161,7 @@ const FormComponent = ({ onSubmit }) => {
     trans_num: '',
     unix_time: '',
     merch_lat: '',
-    merch_long: ''
+    merch_long: '',
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -170,7 +171,7 @@ const FormComponent = ({ onSubmit }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
 
     if (name === 'cc_num') {
@@ -180,18 +181,24 @@ const FormComponent = ({ onSubmit }) => {
   };
 
   const handleMerchantChange = (e) => {
-    const selectedMerchant = sampleMerchants.find(merchant => merchant.name === e.target.value);
+    const selectedMerchant = sampleMerchants.find(
+      (merchant) => merchant.name === e.target.value
+    );
     setFormData({
       ...formData,
       merchant: selectedMerchant.name,
       category: selectedMerchant.category,
       merch_lat: selectedMerchant.merch_lat,
-      merch_long: selectedMerchant.merch_long
+      merch_long: selectedMerchant.merch_long,
     });
   };
 
   const handleUserChange = (e) => {
-    const selectedUser = sampleUsers.find(user => user.first === e.target.value.split(' ')[0] && user.last === e.target.value.split(' ')[1]);
+    const selectedUser = sampleUsers.find(
+      (user) =>
+        user.first === e.target.value.split(' ')[0] &&
+        user.last === e.target.value.split(' ')[1]
+    );
     setFormData({
       ...formData,
       first: selectedUser.first,
@@ -205,7 +212,7 @@ const FormComponent = ({ onSubmit }) => {
       long: selectedUser.long,
       city_pop: selectedUser.city_pop,
       job: selectedUser.job,
-      dob: selectedUser.dob
+      dob: selectedUser.dob,
     });
   };
 
@@ -216,45 +223,56 @@ const FormComponent = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Merchant:</label>
-        <select onChange={handleMerchantChange}>
-          <option value="">Select Merchant</option>
-          {sampleMerchants.map((merchant) => (
-            <option key={merchant.name} value={merchant.name}>{merchant.name}</option>
-          ))}
-        </select>
-      </div>
-      <div className="form-group">
-        <label>User:</label>
-        <select onChange={handleUserChange}>
-          <option value="">Select User</option>
-          {sampleUsers.map((user) => (
-            <option key={user.first + ' ' + user.last} value={user.first + ' ' + user.last}>{user.first + ' ' + user.last}</option>
-          ))}
-        </select>
-      </div>
-      {Object.keys(initialFormState).map((field) => (
-        <div key={field} className="form-group">
-          <label>
-            {fieldLabels[field] || field.replace(/_/g, ' ')}:
-            {field === 'cc_num' && cardType && (
-              <img
-                src={cardTypeLogos[cardType]}
-                alt={`${cardType} logo`}
-                className="card-logo"
-              />
-            )}
-            <input
-              type="text"
-              name={field}
-              value={formData[field]}
-              onChange={handleChange}
-              required
-            />
-          </label>
+      {Object.keys(fieldLabels).map((field) => (
+        <div key={field}>
+          <label htmlFor={field}>{fieldLabels[field]}</label>
+          <input
+            type="text"
+            id={field}
+            name={field}
+            value={formData[field]}
+            onChange={handleChange}
+          />
         </div>
       ))}
+      {cardType && (
+        <div>
+          <label>Card Type:</label>
+          <img src={cardTypeLogos[cardType]} alt={cardType} />
+        </div>
+      )}
+      <div>
+        <label htmlFor="merchant">Select Merchant:</label>
+        <select
+          id="merchant"
+          name="merchant"
+          value={formData.merchant}
+          onChange={handleMerchantChange}
+        >
+          <option value="">Select a merchant</option>
+          {sampleMerchants.map((merchant) => (
+            <option key={merchant.name} value={merchant.name}>
+              {merchant.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="user">Select User:</label>
+        <select
+          id="user"
+          name="user"
+          value={`${formData.first} ${formData.last}`}
+          onChange={handleUserChange}
+        >
+          <option value="">Select a user</option>
+          {sampleUsers.map((user) => (
+            <option key={user.first + ' ' + user.last} value={user.first + ' ' + user.last}>
+              {user.first + ' ' + user.last}
+            </option>
+          ))}
+        </select>
+      </div>
       <button type="submit">Submit</button>
     </form>
   );
