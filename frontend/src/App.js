@@ -7,6 +7,8 @@ import CustomersHome from './components/CustomersHome';
 import BankingHome from './components/BankingHome';
 import MerchantHome from './components/MerchantHome';
 import './App.css';
+import TransactionMessage from './components/TransactionMessage';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -31,6 +33,7 @@ function App() {
               <Route path="/banking-home" element={<BankingHome />} />
               <Route path="/merchant-home/*" element={<MerchantHome />} />
               <Route path="*" element={<Navigate to="/customer-home" />} />
+
             </>
           )}
         </Routes>

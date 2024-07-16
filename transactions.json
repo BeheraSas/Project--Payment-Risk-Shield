@@ -1,0 +1,32 @@
+[
+  {
+    "trans_date_trans_time": "2024-07-16 07:54:05",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 07:54:05",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 07:54:05",
+    "amt": "400",
+    "merchant": "Kilback LLC",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 08:00:51",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 08:00:51",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  }
+]
