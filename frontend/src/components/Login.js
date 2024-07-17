@@ -1,6 +1,6 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './login.css'; // Import the CSS file
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -55,34 +55,43 @@ const Login = ({ onLogin }) => {
         </div>
         <div>
           <label>User Type:</label>
-          <div>
-            <input
-              type="radio"
-              id="customer"
-              name="userType"
-              value="customer"
-              checked={userType === 'customer'}
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            <label htmlFor="customer">Customer</label>
-            <input
-              type="radio"
-              id="bankingCentre"
-              name="userType"
-              value="bankingCentre"
-              checked={userType === 'bankingCentre'}
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            <label htmlFor="bankingCentre">Banking Organisation</label>
-            <input
-              type="radio"
-              id="merchant"
-              name="userType"
-              value="merchant"
-              checked={userType === 'merchant'}
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            <label htmlFor="merchant">Merchant</label>
+          <div className="radio-group">
+            <div className='radio-inline'>
+              <input
+                type="radio"
+                id="customer"
+                name="userType"
+                value="customer"
+                checked={userType === 'customer'}
+                onChange={(e) => setUserType(e.target.value)}
+              />
+              <label htmlFor="customer">Customer</label>
+            </div>
+            
+            <div className='radio-inline'>
+              <input
+                type="radio"
+                id="bankingCentre"
+                name="userType"
+                value="bankingCentre"
+                checked={userType === 'bankingCentre'}
+                onChange={(e) => setUserType(e.target.value)}
+              />
+              <label htmlFor="bankingCentre">Banking Organisation</label>
+            </div>
+
+            <div className='radio-inline'>
+              <input
+                type="radio"
+                id="merchant"
+                name="userType"
+                value="merchant"
+                checked={userType === 'merchant'}
+                onChange={(e) => setUserType(e.target.value)}
+              />
+              <label htmlFor="merchant">Merchant</label>
+            </div>
+            
           </div>
         </div>
         {error && <div style={{ color: 'red' }}>{error}</div>}
