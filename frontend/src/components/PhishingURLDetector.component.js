@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Typography, Table, Tooltip, Button, Tag, Modal } from "antd";
 import axios from 'axios';
 import logo from '../assets/logo.png';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
 import '../phishing.css';
-
 
 function PhishingURLDetector() {
   const [urlValue, setUrlValue] = useState("");
@@ -16,6 +15,7 @@ function PhishingURLDetector() {
   const [redirectColor, setRedirectColor] = useState("");
 
   const navigate = useNavigate(); // Initialize navigate
+  const location = useLocation(); // Initialize location
 
   const featureToDescriptionMapping = {
     Have_IP: "Is IP address present in the URL",
@@ -81,6 +81,15 @@ function PhishingURLDetector() {
       console.error("Error fetching data from API", error);
     }
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const searchUrl = params.get('search');
+    if (searchUrl) {
+      setUrlValue(searchUrl);
+      handleSubmit();
+    }
+  }, [location.search]);
 
   const handleModalOk = () => {
     window.open(redirectUrl, '_blank'); // Opens the URL in a new tab
