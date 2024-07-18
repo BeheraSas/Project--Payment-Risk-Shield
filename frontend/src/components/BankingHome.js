@@ -1,15 +1,19 @@
 // src/components/BankingHome.js
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'antd'; // Ensure Button is imported
+import { Button } from 'antd';
 import logo from '../assets/logo.png';
 
 const BankingHome = () => {
   const navigate = useNavigate();
 
-  // Define handleRedirect function
-  const handleRedirect = () => {
+  const handleRedirectToPhishing = () => {
     navigate('/phishing-detection-bank');
+  };
+
+  const handleRedirectToGraph = () => {
+    navigate('/graph-analysis');
   };
 
   return (
@@ -20,12 +24,11 @@ const BankingHome = () => {
           <span className="app-title">Payment Risk Shield</span>
         </div>
         <div className='ml-auto'>
-            <Button onClick={handleRedirect}>Phishing Detection</Button>
+          <Button onClick={handleRedirectToPhishing}>Phishing Detection</Button>
+          <Button onClick={handleRedirectToGraph}>Graph Analysis</Button>
         </div>
       </nav>
       <h2>Welcome, Customer!</h2>
-      {/* Ensure handleRedirect is correctly referenced */}
-      
       {/* Add more customer-specific content here */}
     </div>
   );

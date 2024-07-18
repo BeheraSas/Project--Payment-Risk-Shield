@@ -7,4 +7,3 @@ python-whois==0.7.3
 joblib
 xgboost
 flask-cors
-
