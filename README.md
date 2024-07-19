@@ -45,8 +45,9 @@ To run the application <br>
 
 Install react <br>
 1. cd frontend <br>
-2. npm install <br>
-3. npm start <br>
+2. npm install react-bootstrap bootstrap <br>
+3. npm install <br>
+4. npm start <br>
 
 Install backend dependencies <br>
 1. cd Project--Payment-Risk-Shield\backend\payment_risk_shield_be <br>
