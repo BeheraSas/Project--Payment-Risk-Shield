@@ -41,6 +41,15 @@ For our integrated Fraud Detection and Phishing URL Verification project, our sp
 [mugdha2509](https://github.com/mugdha2509),
 [dekshitha](https://github.com/dekshitha)
 
-To run the flask application <br>
-1. pip install -r requirements.txt <br>
-2. python app.py  <br>
+To run the application <br>
+
+Install react <br>
+1. cd frontend <br>
+2. npm install <br>
+3. npm start <br>
+
+Install backend dependencies <br>
+1. cd Project--Payment-Risk-Shield\backend\payment_risk_shield_be <br>
+2. Create a virtual python environment : python -m venv .venv <br>
+3. pip install -r requirements.txt <br>
+4. python app.py  <br>
