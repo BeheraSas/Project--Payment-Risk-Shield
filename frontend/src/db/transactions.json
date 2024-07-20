@@ -1,0 +1,110 @@
+[
+  {
+    "trans_date_trans_time": "2024-07-16 19:54:41",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:54:41",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:54:41",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:54:41",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:57:02",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:58:25",
+    "amt": "400",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:58:25",
+    "amt": "4000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:58:25",
+    "amt": "1000",
+    "merchant": "Kilback LLC",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:58:25",
+    "amt": "4000",
+    "merchant": "Hagenes, Kohler and Hoppe",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 19:58:25",
+    "amt": "400",
+    "merchant": "Hagenes, Kohler and Hoppe",
+    "transactionStatus": "notFraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 20:01:10",
+    "amt": "1000",
+    "merchant": "Parisian, Schiller and Altenwerth",
+    "transactionStatus": "fraud"
+  },
+  {
+    "trans_date_trans_time": "2024-07-16 20:03:22",
+    "amt": "300",
+    "merchant": "Hagenes, Kohler and Hoppe",
+    "transactionStatus": "notFraud"
+  }
+]
