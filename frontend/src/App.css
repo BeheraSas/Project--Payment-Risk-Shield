@@ -9,7 +9,7 @@ body {
  
 .App {
   background: rgba(255, 255, 255, 0.98); /* Nearly opaque white for better readability */
-  padding: 40px;
+  padding: 0;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
   width: 100%;

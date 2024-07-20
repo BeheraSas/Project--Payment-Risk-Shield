@@ -1,0 +1,9 @@
+.ant-modal-content {
+  height: 10em;
+}
+
+.ant-modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust gap between buttons if needed */
+  }

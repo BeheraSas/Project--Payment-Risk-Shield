@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const CustomersHome = () => {
   const [transactions, setTransactions] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     async function fetchTransactions() {

@@ -1,0 +1,16 @@
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-inline {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; /* This aligns the radio button and label vertically */
+    margin-bottom: 10px; /* Optional: Adds some space between the radio options */
+    margin-top: 10px;
+}
+
+.radio-inline label {
+    width: 10em;
+}
