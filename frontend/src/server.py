@@ -10,6 +10,19 @@ CORS(app)  # Enable CORS for all routes
 def home():
     return 'Welcome to the Payment Risk Shield API'
 
+@app.route("/getTransactions", methods=['GET'])
+def get_transaction():
+    transactions = []
+    if os.path.exists("transactions.json"):
+        with open("transactions.json", "r") as file:
+            try:
+                transactions = json.load(file)
+            except json.JSONDecodeError:
+                transactions = []
+    
+    return jsonify({"transactions": transactions})
+
+
 @app.route('/saveTransaction', methods=['POST'])
 def save_transaction():
     transaction = request.json
