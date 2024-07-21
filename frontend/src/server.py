@@ -22,6 +22,18 @@ def get_transaction():
     
     return jsonify({"transactions": transactions})
 
+@app.route("/getMessages", methods=["GET"])
+def get_messages():
+    messages = []
+    if os.path.exists("messages.json"):
+        with open("messages.json", "r") as file:
+            try:
+                messages = json.load(file)
+            except json.JSONDecodeError:
+                messages = []
+
+    return jsonify({"messages": messages})
+
 
 @app.route('/saveTransaction', methods=['POST'])
 def save_transaction():

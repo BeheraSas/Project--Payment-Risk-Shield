@@ -1,17 +1,7 @@
 [
   {
     "user": "user1",
-    "message": "testing",
-    "url": "www.google.com"
-  },
-  {
-    "user": "user1",
-    "message": "trying",
-    "url": "www.torrent.com"
-  },
-  {
-    "user": "user1",
-    "message": "good morning",
-    "url": "www.google.com"
+    "message": "URGENT: Your account has been suspended due to suspicious activity. Please verify your information immediately by visiting: http://securebank-verification.com Failure to do so within 24 hours will result in permanent suspension.",
+    "url": "http://securebank-verification.com"
   }
 ]

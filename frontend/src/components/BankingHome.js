@@ -47,13 +47,14 @@ const BankingHome = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="#">
+            <span className='text-sm'>Powered By</span>
             <img src={logo} alt="Logo" className="logo" style={{ height: '40px', marginRight: '10px' }} />
             Payment Risk Shield
           </a>
         </div>
       </nav>
       <Container style={{ marginTop: '2rem' }}>
-        <h2 className="text-center mb-4">Welcome, Customer!</h2>
+        <h2 className="text-center mb-4">ABC Bank</h2>
         <Row>
           <Col md={6}>
             <Card style={cardStyle}>

@@ -25,6 +25,27 @@ const CustomersHome = () => {
     }
     fetchTransactions();
   }, []);
+
+  useEffect(() => {
+    async function fetchMessages() {
+      const url = "http://127.0.0.1:5001/getMessages";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json["messages"]);
+        setMessages(json["messages"]);
+
+        return json;
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchMessages();
+  }, []);
   return (
     <div className="w-full">
       {/* Add more customer-specific content here */}
@@ -71,6 +92,17 @@ const CustomersHome = () => {
               </div>
             );
           }
+        })}
+
+        {messages.map((message) => {
+          return (
+            <div class="max-w-full rounded overflow-hidden shadow-lg">
+              <div class="px-6 py-4">
+                <div class="font-bold text-lg mb-2">Messages With Links</div>
+                <p class="text-gray-700 text-base">{message["message"]}</p>
+              </div>
+            </div>
+          );
         })}
       </div>
     </div>
