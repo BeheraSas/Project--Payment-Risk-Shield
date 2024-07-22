@@ -40,6 +40,7 @@ function App() {
           )}
           <Route path="/phishing-detection" element={<PhishingURLDetector />} />
           <Route path="/phishing-detection-bank" element={<PhishingURLDetectorBank />} />
+          <Route path="/customer-home/*" element={<CustomersHome />} />
         </Routes>
       </div>
     </Router>

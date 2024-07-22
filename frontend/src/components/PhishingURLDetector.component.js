@@ -101,7 +101,7 @@ function PhishingURLDetector() {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <nav className="navbar">
         <div className="navbar-left">
           <img src={logo} alt="Logo" className="logo" />
