@@ -52,5 +52,10 @@ Install react <br>
 Install backend dependencies <br>
 1. cd Project--Payment-Risk-Shield\backend\payment_risk_shield_be <br>
 2. Create a virtual python environment : python -m venv .venv <br>
-3. pip install -r requirements.txt <br>
+3. .\venv\Scripts\activate
+4. pip install -r requirements.txt <br>
 4. python app.py  <br>
+
+Run server.py:
+1. cd Project--Payment-Risk-Shield\
+2, Run server.py
